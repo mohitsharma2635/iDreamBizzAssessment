@@ -1,0 +1,57 @@
+<!-- app.component.html -->
+<app-header></app-header>
+
+<main class="p-4 bg-gray-100 min-h-screen">
+  <div class="container mx-auto space-y-6">
+
+    <!-- Dashboard Title and Date Filter Row -->
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-800">My Dashboard</h1>
+      <app-datefilter></app-datefilter>
+    </div>
+
+    <!-- Top Row: Cards and Charts -->
+    <div class="grid grid-cols-6 gap-6">
+      <!-- Cards (3/6 space) -->
+      <div class="col-span-3">
+        <app-card></app-card>
+      </div>
+
+      <!-- Pie Chart (1/6 space) -->
+      <div class="col-span-1">
+        <app-chart></app-chart>
+      </div>
+
+      <!-- Line Chart (2/6 space) -->
+      <div class="col-span-2">
+        <app-line-chart></app-line-chart>
+      </div>
+    </div>
+
+    <!-- Call Analytics Section -->
+    <div class="w-full">
+      <!-- Call Analytics Header with Buttons -->
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold text-gray-800">Call Analytics</h2>
+        <div class="flex space-x-2">
+          <!-- History Button -->
+          <button (click)="setActiveTab('history')"
+            [ngClass]="activeTab === 'history' ? 'text-white bg-gray-600' : 'text-gray-600 bg-white hover:text-gray-700'"
+            class="px-4 py-2 text-sm font-medium border rounded-lg transition-colors">
+            History
+          </button>
+          <!-- In Progress Button -->
+          <button (click)="setActiveTab('inprogress')"
+            [ngClass]="activeTab === 'inprogress' ? 'text-white bg-gray-600' : 'text-gray-600 bg-white hover:text-gray-700'"
+            class="px-4 py-2 text-sm font-medium border rounded-lg transition-colors">
+            In Progress
+          </button>
+        </div>
+      </div>
+
+      <!-- Call Analytics Table -->
+      <app-table></app-table>
+    </div>
+
+  </div>
+</main>

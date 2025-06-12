@@ -1,0 +1,31 @@
+<div class="flex space-x-4 my-4">
+  <button
+    (click)="setFilter('Today')"
+    [ngClass]="selectedFilter === 'Today' ? 'bg-gray-600 text-white' : 'bg-white'"
+    class="px-4 py-2 rounded-md"
+  >
+    Today
+  </button>
+
+  <button
+    (click)="setFilter('Week')"
+    [ngClass]="selectedFilter === 'Week' ? 'bg-gray-600 text-white' : 'bg-white'"
+    class="px-4 py-2 rounded"
+  >
+    Week
+  </button>
+
+  <button
+    (click)="setFilter('Month')"
+    [ngClass]="selectedFilter === 'Month' ? 'bg-gray-600 text-white' : 'bg-white'"
+    class="px-4 py-2 rounded"
+  >
+    Month
+  </button>
+
+  <input
+    type="date"
+    class="px-4 py-2 border rounded"
+    placeholder="Select date"
+  />
+</div>

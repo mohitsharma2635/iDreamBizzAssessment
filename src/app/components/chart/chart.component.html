@@ -1,0 +1,25 @@
+<!-- chart.component.html -->
+<div class="bg-white p-3 rounded-lg shadow h-full flex flex-col">
+  <h3 class="mb-2 text-gray-700 font-semibold text-center text-sm">Issue Status</h3>
+  <div class="flex-1 flex items-center justify-center">
+    <div class="w-36 h-36">
+      <canvas #statusChart class="w-full h-full"></canvas>
+    </div>
+  </div>
+  
+  <!-- Simple legend -->
+  <div class="mt-2 flex justify-center space-x-4 text-xs">
+    <div class="flex items-center">
+      <div class="w-2 h-2 bg-blue-500 rounded-full mr-1"></div>
+      <span>Resolved</span>
+    </div>
+    <div class="flex items-center">
+      <div class="w-2 h-2 bg-yellow-400 rounded-full mr-1"></div>
+      <span>Unresolved</span>
+    </div>
+    <div class="flex items-center">
+      <div class="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
+      <span>Pending</span>
+    </div>
+  </div>
+</div>
